@@ -11,7 +11,7 @@ System.register(["angular2/core", '../item-list/item-list.component'], function(
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, item_list_component_1;
-    var MetaDataClass;
+    var AppComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -21,20 +21,20 @@ System.register(["angular2/core", '../item-list/item-list.component'], function(
                 item_list_component_1 = item_list_component_1_1;
             }],
         execute: function() {
-            MetaDataClass = (function () {
-                function MetaDataClass() {
+            AppComponent = (function () {
+                function AppComponent() {
                 }
-                MetaDataClass = __decorate([
+                AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-wraper',
                         template: '<my-list></my-list>',
                         directives: [item_list_component_1.ItemComponent]
                     }), 
                     __metadata('design:paramtypes', [])
-                ], MetaDataClass);
-                return MetaDataClass;
+                ], AppComponent);
+                return AppComponent;
             }());
-            exports_1("MetaDataClass", MetaDataClass);
+            exports_1("AppComponent", AppComponent);
         }
     }
 });

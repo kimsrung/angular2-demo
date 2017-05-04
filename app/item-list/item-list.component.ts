@@ -4,8 +4,11 @@ import {Component} from "angular2/core";
 	selector: 'my-list',
 	template: `<h2>List of Fruits</h2>
 						 <ul>
-						 	<li *ngFor="#myItem of itemList">{{myItem.name}}</li>
+						 	<li *ngFor="#item of itemList" (click)="onItemClicked(item)">
+						 		{{item.name}}
+						 	</li>
 						 </ul>
+						 <input type="text" [(ngModel)]="clickedItem.name">
 			  		`
 })
 
@@ -18,5 +21,11 @@ export class ItemComponent {
     {name: 'Kiwi'},
     {name: 'Mango'},
 
-	]
+	];
+
+	public clickedItem = {name: ""};
+	onItemClicked(Item) {
+		this.clickedItem	= Item;
+	}
+
 }

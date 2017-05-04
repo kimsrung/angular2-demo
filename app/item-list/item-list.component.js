@@ -27,11 +27,15 @@ System.register(["angular2/core"], function(exports_1, context_1) {
                         { name: 'Kiwi' },
                         { name: 'Mango' },
                     ];
+                    this.clickedItem = { name: "" };
                 }
+                ItemComponent.prototype.onItemClicked = function (Item) {
+                    this.clickedItem = Item;
+                };
                 ItemComponent = __decorate([
                     core_1.Component({
                         selector: 'my-list',
-                        template: "<h2>List of Fruits</h2>\n\t\t\t\t\t\t <ul>\n\t\t\t\t\t\t \t<li *ngFor=\"#myItem of itemList\">{{myItem.name}}</li>\n\t\t\t\t\t\t </ul>\n\t\t\t  \t\t"
+                        template: "<h2>List of Fruits</h2>\n\t\t\t\t\t\t <ul>\n\t\t\t\t\t\t \t<li *ngFor=\"#item of itemList\" (click)=\"onItemClicked(item)\">\n\t\t\t\t\t\t \t\t{{item.name}}\n\t\t\t\t\t\t \t</li>\n\t\t\t\t\t\t </ul>\n\t\t\t\t\t\t <input type=\"text\" [(ngModel)]=\"clickedItem.name\">\n\t\t\t  \t\t"
                     }), 
                     __metadata('design:paramtypes', [])
                 ], ItemComponent);

@@ -8,6 +8,6 @@ import {ItemComponent} from '../item-list/item-list.component';
 })
 
 
-export class MetaDataClass {
+export class AppComponent {
 	name: 'Kimsrung'
 }
