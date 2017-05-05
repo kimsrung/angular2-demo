@@ -16,15 +16,12 @@
         packages: {'app': {defaultExtension: 'ts'}},
         map: { 'app': 'app' }
       });
-      System.import('app/data-display/datadisplay_main')
-            .then(null, console.error.bind(console));
-      System.import('app/meta-data/metadata_main')
+      System.import('app/service/service_main')
             .then(null, console.error.bind(console));
 
     </script>
   </head>
 <body>
-   <my-app>Loading...</my-app>
-   <my-wraper>Loading list...</my-wraper>
+   <my-service>Loading...</my-service>
 </body>
 </html>

@@ -1,4 +1,4 @@
-System.register(["angular2/core", '../item-list/item-list.component'], function(exports_1, context_1) {
+System.register(["angular2/core", "./country.contacts"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,32 +10,32 @@ System.register(["angular2/core", '../item-list/item-list.component'], function(
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, item_list_component_1;
-    var AppComponent;
+    var core_1, country_contacts_1;
+    var CountryService;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (item_list_component_1_1) {
-                item_list_component_1 = item_list_component_1_1;
+            function (country_contacts_1_1) {
+                country_contacts_1 = country_contacts_1_1;
             }],
         execute: function() {
-            AppComponent = (function () {
-                function AppComponent() {
+            //@Injectable() specifies class is available to an injector for instantiation and an injector will display an error when trying to instantiate a class that is not marked as @Injectable()
+            CountryService = (function () {
+                function CountryService() {
                 }
-                AppComponent = __decorate([
-                    core_1.Component({
-                        selector: 'my-wraper',
-                        template: '<my-list></my-list>',
-                        directives: [item_list_component_1.ItemComponent]
-                    }), 
+                CountryService.prototype.getContacts = function () {
+                    return Promise.resolve(country_contacts_1.COUNTRIES); // takes values from country.contacts typescript file
+                };
+                CountryService = __decorate([
+                    core_1.Injectable(), 
                     __metadata('design:paramtypes', [])
-                ], AppComponent);
-                return AppComponent;
+                ], CountryService);
+                return CountryService;
             }());
-            exports_1("AppComponent", AppComponent);
+            exports_1("CountryService", CountryService);
         }
     }
 });
-//# sourceMappingURL=meta-data.component.js.map
+//# sourceMappingURL=country.service.js.map
